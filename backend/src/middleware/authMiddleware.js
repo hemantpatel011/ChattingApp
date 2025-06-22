@@ -1,17 +1,14 @@
 import jwt from "jsonwebtoken";
-import  User from "../models/userModel.js";
+import User from "../models/userModel.js";
 
 export const userProtect = async (req, res, next) => {
   const token = req.cookies.token;
-
   if (!token) {
     const error = new Error("No token provided, authorization denied");
     error.statusCode = 401;
     return next(error);
   }
 
-
-  
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 

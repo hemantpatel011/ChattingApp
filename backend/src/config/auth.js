@@ -13,4 +13,5 @@ export const generateAuthToken = (userid,res) => {
         secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
         sameSite: 'strict',
     });
+    console.log("token  generated");
     }

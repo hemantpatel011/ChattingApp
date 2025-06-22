@@ -31,9 +31,9 @@ const Login = () => {
       toast.success(res.data.message);
       navigate("/chat");
     } catch (error) {
-      console.error("Error during Login:", error);
+      console.error("Error during Login:", error.message);
       toast.error(
-        error.response?.data?.message || "Login failed. Please try again."
+        error.response?.data?.error || "Login failed. Please try again."
       );
     }
   };

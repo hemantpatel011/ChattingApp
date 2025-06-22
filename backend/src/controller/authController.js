@@ -31,6 +31,7 @@ export const userLogin = async (req, res, next) => {
 
     // Generate token
     generateAuthToken(user._id, res);
+    
 
     // Send response
     res.status(200).json({
